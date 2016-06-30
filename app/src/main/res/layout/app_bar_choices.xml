@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.andrewdittmer.choices.ChoicesActivity">
+    tools:context=".ui.choices.ChoicesActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

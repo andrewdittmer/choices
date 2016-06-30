@@ -1,4 +1,4 @@
-package com.andrewdittmer.choices;
+package com.andrewdittmer.choices.ui.choices;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,6 +19,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.andrewdittmer.choices.EmptyChoicesFragment;
+import com.andrewdittmer.choices.R;
 
 public class ChoicesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
