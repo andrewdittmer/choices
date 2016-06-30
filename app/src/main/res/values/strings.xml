@@ -6,6 +6,15 @@
 
     <string name="action_settings">Settings</string>
 
+    <!-- Choices Screen Strings -->
     <string name="my_choices">My Choices</string>
     <string name="recommended">Recommended</string>
+
+    <!-- Empty List Strings -->
+    <string name="my_choices_empty_title">Time to take new choices!</string>
+    <string name="my_choices_empty_description">Daybreak offers you blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah\n\nblah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</string>
+    <string name="recommended_empty_title">Awesome!</string>
+    <string name="recommended_empty_description">You have done all the blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah\n\nblah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</string>
+
+
 </resources>

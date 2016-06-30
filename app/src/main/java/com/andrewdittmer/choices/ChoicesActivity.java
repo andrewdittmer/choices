@@ -109,7 +109,21 @@ public class ChoicesActivity extends AppCompatActivity
         @Override
         public Fragment getItem(int position) {
 
-            return new Fragment();
+            String title = "";
+            String description = "";
+            int icon = 0;
+
+            if (position == 0) {
+                title = getString(R.string.my_choices_empty_title);
+                description = getString(R.string.my_choices_empty_description);
+                icon = R.drawable.red_circle;
+            } else {
+                title = getString(R.string.recommended_empty_title);
+                description = getString(R.string.recommended_empty_description);
+                icon = R.drawable.blue_circle;
+            }
+
+            return EmptyChoicesFragment.newInstance(title, description, icon);
         }
 
         @Override
