@@ -1,8 +1,15 @@
 package com.andrewdittmer.choices;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +22,8 @@ import android.view.MenuItem;
 
 public class ChoicesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ViewPager mVpgChoices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +40,13 @@ public class ChoicesActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mVpgChoices = (ViewPager) findViewById(R.id.vpg_choices);
+        mVpgChoices.setAdapter(new ChoicesTabAdapter(getSupportFragmentManager(), this));
+
+        // Give the TabLayout the ViewPager
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_choices);
+        tabLayout.setupWithViewPager(mVpgChoices);
     }
 
     @Override
@@ -73,5 +89,38 @@ public class ChoicesActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public class ChoicesTabAdapter extends FragmentPagerAdapter {
+        final int PAGE_COUNT = 2;
+        private String mTabTitles[] = new String[] { getString(R.string.my_choices), getString(R.string.recommended) };
+        private Context context;
+
+        public ChoicesTabAdapter(FragmentManager fm, Context context) {
+            super(fm);
+            this.context = context;
+        }
+
+        @Override
+        public int getCount() {
+            return PAGE_COUNT;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            return new Fragment();
+        }
+
+        @Override
+        public int getItemPosition(Object object) {
+
+            return POSITION_NONE;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mTabTitles[position];
+        }
     }
 }
