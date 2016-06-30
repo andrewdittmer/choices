@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="32dp"
-        tools:context="com.andrewdittmer.choices.EmptyChoicesFragment">
+        tools:context=".ui.choices.EmptyChoicesFragment">
 
         <TextView
             android:id="@+id/txt_title"
